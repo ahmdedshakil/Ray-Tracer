@@ -13,6 +13,7 @@ int main() {
     cout << "P3\n" << width << ' ' << height << "\n255\n";
 
     for (int i = 0; i < height; i++) {
+        clog << "\rLines of output remaining: " << (height - i) << ' ' << flush;
         for (int j = 0; j < width; j++) {
             auto r = double(j) / (width - 1);
             auto g = double(i) / (height - 1);
@@ -25,4 +26,6 @@ int main() {
             cout << ir << ' ' << ig << ' ' << ib << '\n';
         }
     }
+
+    clog << "\rDone.                 \n";
 }
